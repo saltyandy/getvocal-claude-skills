@@ -66,6 +66,15 @@ console.log("✅ Installed and enabled getvocal-page-builder ("+sha.slice(0,7)+"
 '
 ```
 
+## Add the Sanity token
+
+You'll have received a token from Andy. Paste this into Terminal, replacing
+`PASTE_TOKEN_HERE` with the real value (keep the single quotes around it):
+
+```bash
+TOKEN='PASTE_TOKEN_HERE' node -e 'const fs=require("fs"),os=require("os"),p=require("path");const d=p.join(os.homedir(),".claude"),f=p.join(d,"settings.json");fs.mkdirSync(d,{recursive:true});let s={};try{s=JSON.parse(fs.readFileSync(f,"utf8"))}catch{}s.env=s.env||{};s.env.SANITY_API_WRITE_TOKEN=process.env.TOKEN;fs.writeFileSync(f,JSON.stringify(s,null,2)+"\n");console.log("✅ Token saved to "+f)'
+```
+
 ## Verify
 
 ```bash
@@ -92,4 +101,3 @@ should appear in the command menu.
   it in the repo so fresh clones are correct.
 - The `~/.claude/plugins/` path is shared by the desktop app and the `claude`
   CLI, so `claude plugin list` is a reliable way to check state.
-```

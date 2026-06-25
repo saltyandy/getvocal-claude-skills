@@ -1,0 +1,14 @@
+{
+  "name": "getvocal-skills",
+  "owner": { "name": "GetVocal" },
+  "metadata": {
+    "description": "Internal GetVocal Claude Code skills (marketing + content tooling)."
+  },
+  "plugins": [
+    {
+      "name": "getvocal-page-builder",
+      "source": "./getvocal-page-builder",
+      "description": "Turn a supplied content document into a ready-to-review Sanity draft page (webinar, event, or landing) on getvocal.ai."
+    }
+  ]
+}

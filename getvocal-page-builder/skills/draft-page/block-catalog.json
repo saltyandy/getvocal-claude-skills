@@ -1,0 +1,388 @@
+{
+  "legend": "placeable = renders + has a schema (safe to emit). verdict/v2Status/uses/notes are the manifest's live advice — prefer high-`uses`, read `notes`. If a row has `supersededBy`, emit THAT block instead (a current replacement exists). A 'merged' row with no `supersededBy` is still the only placeable option — keep using it. Never emit anything in `deprecated` or `notPlaceableTypes`.",
+  "counts": {
+    "placeable": 37,
+    "deprecated": 2,
+    "registryOnly": 6
+  },
+  "placeable": [
+    {
+      "type": "hero",
+      "title": "Hero (legacy)",
+      "category": "hero",
+      "verdict": "Merge",
+      "v2Status": "merged",
+      "uses": 52,
+      "notes": "Visual covered by Hero V2 (layout: imageRight | centered). Awaiting migration script to flip _type + add layout enum on existing docs."
+    },
+    {
+      "type": "cards",
+      "title": "Cards",
+      "category": "cards",
+      "verdict": "Rebuild",
+      "v2Status": "done",
+      "uses": 25,
+      "notes": "Consolidated cards block. Variants: default · outlined · tile · expandable · kinetic · showcase · bento · proof. `showHeader` toggle on the block hides the section header lockup so the cards can stack flush under another block."
+    },
+    {
+      "type": "mediaCards",
+      "title": "Media Cards (legacy)",
+      "category": "cards",
+      "verdict": "Rebuild",
+      "v2Status": "merged",
+      "uses": 25,
+      "notes": "Visual covered by Cards (default/outlined/tile). Migration: rename _type=cards, set variant=default.",
+      "supersededBy": "cards"
+    },
+    {
+      "type": "hero2",
+      "title": "Hero 2 — image right (legacy)",
+      "category": "hero",
+      "verdict": "Merge",
+      "v2Status": "merged",
+      "uses": 22,
+      "notes": "Visual covered by Hero V2 layout=imageRight. Migration: set _type=hero, layout=imageRight.",
+      "supersededBy": "hero"
+    },
+    {
+      "type": "featureWithMedia",
+      "title": "Feature + Media",
+      "category": "content",
+      "verdict": "Restyle",
+      "v2Status": "done",
+      "uses": 21,
+      "notes": "Workhorse split layout. Code block or image on either side."
+    },
+    {
+      "type": "logosBlock",
+      "title": "Logos — marquee",
+      "category": "social-proof",
+      "verdict": "Restyle",
+      "v2Status": "done",
+      "uses": 18,
+      "notes": "Reference-fragment block. Dual-row marquee with pill cells."
+    },
+    {
+      "type": "featureWithTestimonialAndImageBlock",
+      "title": "Feature + Testimonial",
+      "category": "content",
+      "verdict": "Rebuild",
+      "v2Status": "done",
+      "uses": 17,
+      "notes": "Flattened quoteCardItem onto the block. Image placeholder + heading + body + coral-rule quote tile + CTA. Two layouts (image right / left)."
+    },
+    {
+      "type": "formBlock",
+      "title": "Form",
+      "category": "form",
+      "verdict": "Restyle",
+      "v2Status": "done",
+      "uses": 17,
+      "notes": "Aurora reskin of the v1 form-block. Three layouts: split (copy + features + form), standalone (form only, centred), with-asset (asset preview + form for gated landing pages). Gating itself lives in HubSpot / thank-you pages, not in-block."
+    },
+    {
+      "type": "richTextContent",
+      "title": "Rich Text Content",
+      "category": "content",
+      "verdict": "Restyle",
+      "v2Status": "done",
+      "uses": 15,
+      "notes": "Prose host. Geist type scale per brand book: Light at display, Regular at h1–h2, Medium at h3. Coral pull-quote rule for the one brand emphasis per page."
+    },
+    {
+      "type": "logos",
+      "title": "Logos (deprecated)",
+      "category": "social-proof",
+      "verdict": "Merge",
+      "v2Status": "merged",
+      "uses": 14,
+      "notes": "Visual covered by Logos · marquee (LogosMarqueeV2). Migration: convert inline logos into a referenced logosBlock fragment and flip _type."
+    },
+    {
+      "type": "accordionImageBlock",
+      "title": "Accordion + Image",
+      "category": "content",
+      "verdict": "Merge",
+      "v2Status": "merged",
+      "uses": 14,
+      "notes": "Visual covered by the Stepper — hover/focus to activate, per-step preview (image / chat / placeholder), inline body expansion. Migration: rename _type to steppedShowcase, map each accordion item's title+body+image into a step's title/body/preview."
+    },
+    {
+      "type": "cta",
+      "title": "CTA (deprecated)",
+      "category": "cta",
+      "verdict": "Merge",
+      "v2Status": "merged",
+      "uses": 14,
+      "notes": "Visual covered by Hero V2 (layout=centered). Migration: rename _type=hero, set layout=centered.",
+      "supersededBy": "hero"
+    },
+    {
+      "type": "caseStudies",
+      "title": "Case Studies (block)",
+      "category": "cards",
+      "verdict": "Restyle",
+      "v2Status": "merged",
+      "uses": 12,
+      "notes": "Visual covered by Case Study Showcase variants (arches · pills · rounded · interactive). Schema unchanged — just pick the variant via the existing `variant` enum on the block."
+    },
+    {
+      "type": "miniFeatureCallout",
+      "title": "Mini Feature Callout",
+      "category": "content",
+      "verdict": "Restyle",
+      "v2Status": "done",
+      "uses": 10
+    },
+    {
+      "type": "statsBlock",
+      "title": "Stats",
+      "category": "data",
+      "verdict": "Restyle",
+      "v2Status": "done",
+      "uses": 8,
+      "notes": "Counter motion · coral emphasis · verified pill."
+    },
+    {
+      "type": "calloutCards",
+      "title": "Callout Cards (legacy)",
+      "category": "cards",
+      "verdict": "Merge",
+      "v2Status": "merged",
+      "uses": 6,
+      "notes": "Visual covered by Cards (variant=outlined). Migration: rename _type=cards, set variant=outlined.",
+      "supersededBy": "cards"
+    },
+    {
+      "type": "industryCards",
+      "title": "Industry Cards (legacy)",
+      "category": "cards",
+      "verdict": "Merge",
+      "v2Status": "merged",
+      "uses": 5,
+      "notes": "Visual covered by Cards (variant=tile). Migration: rename _type=cards, set variant.",
+      "supersededBy": "cards"
+    },
+    {
+      "type": "videoTestimonialHeroBlock",
+      "title": "Video Testimonial Hero",
+      "category": "social-proof",
+      "verdict": "Restyle",
+      "v2Status": "done",
+      "uses": 3,
+      "notes": "Hero-scale customer testimonial paired with a vertical video tile. Quote + coral stat anchor on one side, video player on the other. Position swap supported."
+    },
+    {
+      "type": "featureColumnsBlock",
+      "title": "Feature Columns",
+      "category": "content",
+      "verdict": "Restyle",
+      "v2Status": "done",
+      "uses": 3,
+      "notes": "Flat N-column block. No card chrome — just icon + eyebrow + heading + body, gap-px hairlines between columns, all sitting on the same baseline."
+    },
+    {
+      "type": "features",
+      "title": "Features Layout",
+      "category": "content",
+      "verdict": "Restyle",
+      "v2Status": "done",
+      "uses": 3,
+      "notes": "Aurora reskin of the v1 features block. Same functionality: sticky tab bar with circled-number pills, per-block scroll-progress bars, click-to-scroll, auto-active on scroll. Composite group container preserved; each nested block renders an image + text content stack."
+    },
+    {
+      "type": "steppedShowcaseBlock",
+      "title": "Stepper",
+      "category": "content",
+      "verdict": "Rebuild",
+      "v2Status": "done",
+      "uses": 2,
+      "notes": "Absorbs steppedShowcase + accordionImage. Hover/focus to activate a step, body expands inline, sticky preview panel swaps. Per-step preview can be placeholder, image, or interactive chat. Auto-advances every 4s with a coral timer bar; hovering the step list pauses."
+    },
+    {
+      "type": "pricingBlock",
+      "title": "Pricing",
+      "category": "data",
+      "verdict": "Restyle",
+      "v2Status": "done",
+      "uses": 2
+    },
+    {
+      "type": "comparisonQuizBlock",
+      "title": "Comparison Quiz",
+      "category": "form",
+      "verdict": "Restyle",
+      "v2Status": "done",
+      "uses": 2,
+      "notes": "Interactive 2-3 question quiz that biases an outcome. Each option contributes to an outcome key; after all questions the matching outcome is shown with CTA. Reset button."
+    },
+    {
+      "type": "heroAnimatedVisual",
+      "title": "Hero (animated visual) — legacy",
+      "category": "hero",
+      "verdict": "Merge",
+      "v2Status": "merged",
+      "uses": 1,
+      "notes": "Visual covered by Hero V2 (with the chat-animation code block when visualType lands). Migration: set _type=hero.",
+      "supersededBy": "hero"
+    },
+    {
+      "type": "faqAccordion",
+      "title": "FAQ Accordion",
+      "category": "content",
+      "verdict": "Restyle",
+      "v2Status": "done",
+      "uses": 1
+    },
+    {
+      "type": "heroIndustryShowcase",
+      "title": "Hero + Industry Showcase",
+      "category": "hero",
+      "verdict": "New",
+      "v2Status": "done",
+      "uses": 0,
+      "notes": "Industry-picker hero with video + scripted chat. Two layouts: default + arch."
+    },
+    {
+      "type": "immersiveMiniSite",
+      "title": "Immersive Mini-Site",
+      "category": "content",
+      "verdict": "Restyle",
+      "v2Status": "done",
+      "uses": 0,
+      "notes": "Scroll-driven expanding panels."
+    },
+    {
+      "type": "videoBlock",
+      "title": "Video Block",
+      "category": "media",
+      "verdict": "Restyle",
+      "v2Status": "done",
+      "uses": 0,
+      "notes": "Shared video primitive — Mux/URL/YouTube routed via the `source` prop. Optional eyebrow + title + caption around the player. 16:9, rounded-24, play-pill overlay."
+    },
+    {
+      "type": "inlineVideo",
+      "title": "Inline Video",
+      "category": "media",
+      "verdict": "Restyle",
+      "v2Status": "done",
+      "uses": 0,
+      "notes": "Same primitive as Video Block, used for URL-sourced clips embedded inline in prose. Minimal chrome."
+    },
+    {
+      "type": "youtubeVideoBlock",
+      "title": "YouTube Video",
+      "category": "media",
+      "verdict": "Restyle",
+      "v2Status": "done",
+      "uses": 0
+    },
+    {
+      "type": "agentDemoBlock",
+      "title": "Agent Demo",
+      "category": "form",
+      "verdict": "Restyle",
+      "v2Status": "done",
+      "uses": 0
+    },
+    {
+      "type": "webinarRegistration",
+      "title": "Webinar · Registration",
+      "category": "event",
+      "verdict": "New",
+      "v2Status": "done",
+      "uses": 0,
+      "notes": "Combined digital-event sign-up module: co-brand eyebrow + title + subtitle, date/time/format facts, a 'What you'll learn' list, speaker cards (name · role · LinkedIn) and a sticky HubSpot registration form. For online webinars — pairs with the Webinar page template."
+    },
+    {
+      "type": "eventDetails",
+      "title": "Event · Details",
+      "category": "event",
+      "verdict": "New",
+      "v2Status": "done",
+      "uses": 0,
+      "notes": "Agenda + speakers + venue panel."
+    },
+    {
+      "type": "eventMap",
+      "title": "Event · Map",
+      "category": "event",
+      "verdict": "New",
+      "v2Status": "done",
+      "uses": 0
+    },
+    {
+      "type": "eventDates",
+      "title": "Event · Multi-date list",
+      "category": "event",
+      "verdict": "New",
+      "v2Status": "done",
+      "uses": 0,
+      "notes": "Multi-date / multi-location module for field-marketer tours."
+    },
+    {
+      "type": "assetPreview",
+      "title": "Asset · Preview (gated landing)",
+      "category": "asset",
+      "verdict": "New",
+      "v2Status": "done",
+      "uses": 0,
+      "notes": "Pairs with form-block on the gated-asset landing template."
+    },
+    {
+      "type": "assetDelivery",
+      "title": "Asset · Delivery (thank-you page)",
+      "category": "asset",
+      "verdict": "New",
+      "v2Status": "done",
+      "uses": 0,
+      "notes": "Thank-you page after gated download."
+    }
+  ],
+  "deprecated": [
+    {
+      "type": "sectionOpener",
+      "title": "Section Opener",
+      "category": "content",
+      "verdict": "Kill",
+      "v2Status": "killed",
+      "uses": 13,
+      "notes": "Killed in v2. Every block now carries its own mandatory eyebrow + heading + body, so a standalone opener is redundant. Migration: fold each existing Section Opener's content into the next block's intro fields, then delete."
+    },
+    {
+      "type": "tileGrid",
+      "title": "Tile Grid",
+      "category": "content",
+      "verdict": "Kill",
+      "v2Status": "killed",
+      "uses": 3
+    }
+  ],
+  "registryOnly": {
+    "types": [
+      "storyTimeline",
+      "newsHighlights",
+      "homeHeroVideo",
+      "homeTestimonials",
+      "homeIntegrations",
+      "homeCompliance"
+    ],
+    "note": "Renders but not catalogued in the manifest yet — confirm it's intended for new pages before using."
+  },
+  "notPlaceableTypes": [
+    "v2:navbar",
+    "v2:hero",
+    "v2:hero-alt",
+    "v2:hero-arches",
+    "v2:logos-grid",
+    "v2:case-study-showcase",
+    "v2:feature-grid",
+    "v2:news-grid",
+    "v2:stepped-thread",
+    "v2:stepped-arches",
+    "v2:stepped-ledger",
+    "v2:cards-deck",
+    "v2:differentiator-pills"
+  ]
+}

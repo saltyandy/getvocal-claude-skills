@@ -1,6 +1,5 @@
 {
   "name": "getvocal-page-builder",
   "description": "Turn a supplied content document into a ready-to-review Sanity draft page (webinar, event, or landing) on getvocal.ai.",
-  "version": "0.1.0",
   "author": { "name": "GetVocal" }
 }
